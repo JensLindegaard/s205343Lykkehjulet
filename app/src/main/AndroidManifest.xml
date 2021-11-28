@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.S205343Lykkehjulet">
         <activity
+            android:name="com.example.s205343lykkehjulet.ui.startGame.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

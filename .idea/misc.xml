@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Individuel_opgave/Individuel_opgave_kode/app/src/main/res/layout/fragment_start_game.xml" value="0.2710526315789474" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Individuel_opgave/Individuel_opgave_kode/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Individuel_opgave/Individuel_opgave_kode/app/src/main/res/layout/fragment_blank.xml" value="0.365625" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Individuel_opgave/Individuel_opgave_kode/app/src/main/res/layout/fragment_game_lost.xml" value="0.25" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Individuel_opgave/Individuel_opgave_kode/app/src/main/res/layout/fragment_game_won.xml" value="0.1702127659574468" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Individuel_opgave/Individuel_opgave_kode/app/src/main/res/layout/fragment_guess_word.xml" value="0.33" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Individuel_opgave/Individuel_opgave_kode/app/src/main/res/layout/fragment_start_game.xml" value="0.25" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Individuel_opgave/Individuel_opgave_kode/app/src/main/res/layout/main_activity.xml" value="0.2046875" />
+        <entry key="..\:/Users/Bruger/OneDrive/DTU/3_semester/62550_User_experince_mobile_application/Individuel_opgave/Individuel_opgave_kode/app/src/main/res/layout/main_fragment.xml" value="0.23822463768115942" />
       </map>
     </option>
   </component>
