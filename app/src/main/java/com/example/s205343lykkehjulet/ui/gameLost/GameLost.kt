@@ -12,7 +12,7 @@ import com.example.s205343lykkehjulet.databinding.FragmentGameLostBinding
 class GameLost : Fragment() {
     private var _binding: FragmentGameLostBinding? = null
     private val binding get() = _binding!!
-    var navController : NavController? = null
+    var navController: NavController? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,

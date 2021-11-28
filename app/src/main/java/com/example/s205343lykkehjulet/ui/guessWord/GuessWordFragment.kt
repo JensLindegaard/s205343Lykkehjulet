@@ -14,7 +14,7 @@ import com.example.s205343lykkehjulet.databinding.FragmentGuessWordBinding
 class GuessWordFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentGuessWordBinding? = null
     private val binding get() = _binding!!
-    var navController : NavController? = null
+    var navController: NavController? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,13 +30,13 @@ class GuessWordFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         view.findViewById<Button>(R.id.btnGuess).setOnClickListener(this)
-        binding.btnGuess.setOnClickListener{
+        binding.btnGuess.setOnClickListener {
 
 //            viewModel.run()
         }
     }
 
-    override fun onClick(p0: View?){
+    override fun onClick(p0: View?) {
 
     }
 }
