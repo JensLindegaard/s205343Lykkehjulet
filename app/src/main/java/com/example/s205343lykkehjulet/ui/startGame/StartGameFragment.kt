@@ -9,22 +9,19 @@ import android.widget.Button
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.s205343lykkehjulet.R
 import com.example.s205343lykkehjulet.databinding.FragmentStartGameBinding
 
-class StartGameFragment : Fragment(), View.OnClickListener {
-    private lateinit var startGameViewModel: StartGameViewModel
+class StartGameFragment : Fragment(){
     private var _binding: FragmentStartGameBinding? = null
     private val binding get() = _binding!!
-    var navController: NavController? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        startGameViewModel =
-            ViewModelProvider(this).get(StartGameViewModel::class.java)
         _binding = FragmentStartGameBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -33,14 +30,8 @@ class StartGameFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = Navigation.findNavController(view)
-        view.findViewById<Button>(R.id.start_game_button).setOnClickListener(this)
-    }
-
-    override fun onClick(p0: View?) {
-        when (p0!!.id) {
-            R.id.start_game_button -> navController!!.navigate(R.id.action_startGameFragment_to_guessWordFragment)
-
+        binding.startGameButton.setOnClickListener{
+            findNavController().navigate(R.id.action_startGameFragment_to_guessWordFragment)
         }
     }
 
