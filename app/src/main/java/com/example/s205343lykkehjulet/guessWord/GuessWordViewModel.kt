@@ -6,15 +6,6 @@ import androidx.lifecycle.ViewModel
 class GuessWordViewModel : ViewModel() {
     var liv = 8
 
-    fun words(){
-
-    }
-
-
-
-
-
-
     fun UsedLives() {
         liv -= 1
     }

@@ -31,8 +31,7 @@ class GuessWordFragment : Fragment(), View.OnClickListener {
         navController = Navigation.findNavController(view)
         view.findViewById<Button>(R.id.btnGuess).setOnClickListener(this)
         binding.btnGuess.setOnClickListener {
-
-//            viewModel.run()
+        //            viewModel.run()
         }
     }
 
