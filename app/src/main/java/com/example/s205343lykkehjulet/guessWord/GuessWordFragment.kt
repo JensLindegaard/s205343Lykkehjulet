@@ -1,4 +1,4 @@
-package com.example.s205343lykkehjulet.ui.guessWord
+package com.example.s205343lykkehjulet.guessWord
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

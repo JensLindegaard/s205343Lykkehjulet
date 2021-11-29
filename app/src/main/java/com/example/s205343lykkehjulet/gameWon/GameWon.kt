@@ -1,11 +1,10 @@
-package com.example.s205343lykkehjulet.ui.gameWon
+package com.example.s205343lykkehjulet.gameWon
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
-import com.example.s205343lykkehjulet.R
 import com.example.s205343lykkehjulet.databinding.FragmentGameWonBinding
 
 class GameWon : Fragment() {

@@ -1,4 +1,4 @@
-package com.example.s205343lykkehjulet.ui.gameLost
+package com.example.s205343lykkehjulet.gameLost
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
-import com.example.s205343lykkehjulet.R
 import com.example.s205343lykkehjulet.databinding.FragmentGameLostBinding
 
 class GameLost : Fragment() {

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.S205343Lykkehjulet">
         <activity
-            android:name="com.example.s205343lykkehjulet.ui.startGame.MainActivity"
+            android:name="com.example.s205343lykkehjulet.startGame.MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
