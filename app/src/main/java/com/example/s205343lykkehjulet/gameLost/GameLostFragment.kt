@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
+import com.example.s205343lykkehjulet.R
 import com.example.s205343lykkehjulet.databinding.FragmentGameLostBinding
 
-class GameLost : Fragment() {
+class GameLostFragment : Fragment() {
     private var _binding: FragmentGameLostBinding? = null
     private val binding get() = _binding!!
-    var navController: NavController? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,5 +21,17 @@ class GameLost : Fragment() {
         _binding = FragmentGameLostBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+         binding.TabtTilHjem.setOnClickListener{
+             findNavController().navigate(R.id.action_gameLost_to_startGameFragment)
+         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

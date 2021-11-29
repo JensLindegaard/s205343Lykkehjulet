@@ -20,7 +20,6 @@ class StartGameFragment : Fragment(){
     ): View? {
         _binding = FragmentStartGameBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         return root
     }
 

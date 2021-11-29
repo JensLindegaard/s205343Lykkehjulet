@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameWon.GameWon">
+    tools:context=".gameWon.GameWonFragment">
 
-    <TextView
-        android:id="@+id/tvGameWon"
+    <Button
+        android:id="@+id/Vundet_til_Start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/SpilVundet"
-        android:textSize="36sp"
-        android:textStyle="bold"
+        android:text="@string/du_har_vundet_spil_igen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

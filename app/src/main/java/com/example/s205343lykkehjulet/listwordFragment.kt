@@ -24,13 +24,13 @@ class listwordFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val myDataset = Datasource().loadAffirmations()
-
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.adapter = ItemAdapter(this, myDataset)
-
-        recyclerView.setHasFixedSize(true)
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        val myDataset = Datasource().loadAffirmations()
+//
+//        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+//        recyclerView.adapter = ItemAdapter(this, myDataset)
+//
+//        recyclerView.setHasFixedSize(true)
     }
 }
