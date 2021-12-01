@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -17,9 +19,14 @@ import com.example.s205343lykkehjulet.databinding.FragmentGuessWordBinding
 //import com.example.s205343lykkehjulet.UI.GuessWordViewModel
 
 class GuessWordFragment : Fragment() {
+
     private var _binding: FragmentGuessWordBinding? = null
     private val binding get() = _binding!!
     private val viewModel: GuessWordViewModel by viewModels()
+    private val guesswordviewmodel = GuessWordViewModel()
+    private lateinit var possibleLetters: ConstraintLayout
+    private lateinit var actualWord: TextView
+    private lateinit var lettersGuessed: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,11 +37,7 @@ class GuessWordFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-//        view.findViewById<Button>(R.id.btnGuess).setOnClickListener(this)
-//        binding.btnGuess.setOnClickListener {
-        //viewModel.run()
-    }
+
+
 }
 

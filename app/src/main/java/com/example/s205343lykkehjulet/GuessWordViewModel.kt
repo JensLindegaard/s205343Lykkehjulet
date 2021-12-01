@@ -14,54 +14,80 @@ val words: LiveData<String> = _words
 private var ordgaettet = ""
 
 
-
 class GuessWordViewModel : ViewModel() {
+
 
     private val getPossibleWords = Datasource().wordsPosible
 
     private val rightGuess = mutableListOf<String>()
 
-    private var noShowWord: String =  ""
+    private var lettersGuessed: String = ""
     private lateinit var underscores: String
     private lateinit var wordToGuess: String
-    private var maxLifes = 5
-    private val currentPoint = 0
+    private var lifes = 5
+    private var gameoverLifes = 0
+    private val currentPoints = 0
 
-    fun newGame(){
-        noShowWord = ""
-        maxLifes = 5
-        val randomIndex = Random.nextInt(0,getPossibleWords.size)
+    fun Game() {
+        lettersGuessed = ""
+        lifes = 5
+        val randomIndex = Random.nextInt(0, getPossibleWords.size)
         wordToGuess = getPossibleWords[randomIndex].toString()
         underScores(wordToGuess)
     }
 
-    fun underScores(word: String){
+    fun underScores(word: String) {
         val letters = StringBuilder()
         word.forEach { char ->
-            if(char =='/'){
-                letters.append('/')
+            if (char == ' ') {
+                letters.append(' ')
             } else {
                 letters.append('_')
             }
-        underscores = letters.toString()
+            underscores = letters.toString()
         }
     }
 
+    fun playGame(letters: Char): gameState {
+        if (lettersGuessed.contains(letters)) {
+            return gameState.playingGame(lettersGuessed, underscores)
+        }
+        lettersGuessed += letters
+        val indexes = mutableListOf<Int>()
 
-    fun bogstav(letterGuess: String){
+        wordToGuess.forEachIndexed { index, c ->
+            if (c.equals(letters, true)) {
+                indexes.add(index)
+            }
+        }
 
+        var allUnderscores = "" + underscores
+        indexes.forEach { index ->
+            val stringbuilder = StringBuilder(allUnderscores).also { it.setCharAt(index, letters) }
+            allUnderscores = stringbuilder.toString()
+        }
+
+        if (indexes.isEmpty()) {
+            lifes--
+        }
+
+        underscores = allUnderscores
+        return getgameState()
     }
 
-    fun spinWheel(){
+    private fun getgameState(): gameState {
+        if (underscores.equals(wordToGuess, true)) {
+            return gameState.wonGame(wordToGuess)
+        }
+
+        if (currentPoints == gameoverLifes) {
+            return gameState.lostGame(wordToGuess)
+        }
+
+        return gameState.playingGame(lettersGuessed, underscores)
+    }
+
+    fun spinWheel() {
 
     }
 }
-
-
-
-
-
-//private val _character = MutableLiveData<MutableList<Char>>()
-//val character: LiveData<List<Char>> = Transformations.map(_character) {
-//    it.toList()
-//}
