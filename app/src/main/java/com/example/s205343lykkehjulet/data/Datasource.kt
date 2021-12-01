@@ -1,13 +1,23 @@
 package com.example.s205343lykkehjulet.data
 
+import android.provider.UserDictionary
 import com.example.s205343lykkehjulet.R
-import com.example.s205343lykkehjulet.model.Affirmation
+import com.example.s205343lykkehjulet.model.possibleWords
 
 class Datasource {
 
- var muligeord = ArrayList<String>()
+    val muligeOrd = listOf<possibleWords>(
+        possibleWords("Biler",
+            listOf(
+                "BMW",
+                "Mercedes",
+                "Toyota",
+                "Volvo")),
 
-    init {
-        muligeord.add("pølse")
-    }
+        possibleWords("Mad",
+            listOf(
+                "Burger",
+                "Kylling i karry"
+            ))
+    )
 }

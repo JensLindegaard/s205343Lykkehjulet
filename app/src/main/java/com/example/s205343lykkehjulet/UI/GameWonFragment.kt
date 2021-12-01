@@ -1,4 +1,4 @@
-package com.example.s205343lykkehjulet.gameWon
+package com.example.s205343lykkehjulet.UI
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -28,7 +28,7 @@ class GameWonFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.VundetTilStart.setOnClickListener{
-            findNavController().navigate(R.id.action_gameLost_to_startGameFragment)
+            findNavController().navigate(R.id.action_gameWon_to_startGameFragment)
         }
     }
 

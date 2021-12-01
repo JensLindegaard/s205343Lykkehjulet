@@ -1,4 +1,4 @@
-package com.example.s205343lykkehjulet.startGame
+package com.example.s205343lykkehjulet.UI
 
 import android.os.Bundle
 import android.view.LayoutInflater

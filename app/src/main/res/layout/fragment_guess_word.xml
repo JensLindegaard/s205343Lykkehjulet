@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".guessWord.GuessWordFragment">
+    tools:context=".UI.GuessWordFragment">
 
     <Button
         android:id="@+id/btnGuess"
@@ -19,45 +19,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/Til_Vundet_Skærm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/vundet_skearm"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131" />
-
-    <Button
-        android:id="@+id/Til_Tabt_skærm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tabt_skaerm"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.253"
-        tools:visibility="visible" />
-
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/Guessedletter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/Guess_her"
         android:ems="10"
-        android:hint="Gæt her"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnGuess"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
