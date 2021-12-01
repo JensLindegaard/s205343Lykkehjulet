@@ -6,18 +6,12 @@ import com.example.s205343lykkehjulet.model.possibleWords
 
 class Datasource {
 
-    val muligeOrd = listOf<possibleWords>(
+    val wordsPosible = listOf<possibleWords>(
         possibleWords("Biler",
             listOf(
                 "BMW",
                 "Mercedes",
                 "Toyota",
-                "Volvo")),
-
-        possibleWords("Mad",
-            listOf(
-                "Burger",
-                "Kylling i karry"
-            ))
+                "Volvo"))
     )
 }
