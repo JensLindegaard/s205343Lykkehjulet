@@ -46,5 +46,7 @@
     <string name="x">X</string>
     <string name="y">Y</string>
     <string name="z">Z</string>
+    <string name="word_that_need_to_be_guessed">Word that need to be guessed</string>
+    <string name="spin_wheel">Spin Wheel!!</string>
 
 </resources>

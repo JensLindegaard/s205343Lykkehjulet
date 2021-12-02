@@ -11,8 +11,7 @@ import com.example.s205343lykkehjulet.model.possibleWords
 
 class WordAdapter(
     private val context: Context,
-    private val dataset: List<possibleWords>
-) : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
+    private val dataset: List<possibleWords>) : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and

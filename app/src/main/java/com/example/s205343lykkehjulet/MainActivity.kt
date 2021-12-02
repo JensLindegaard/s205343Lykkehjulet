@@ -2,9 +2,12 @@ package com.example.s205343lykkehjulet
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.NavHostFragment
 import com.example.s205343lykkehjulet.databinding.ActivityMainBinding
 import com.example.s205343lykkehjulet.databinding.ActivityMainBinding.*
+import com.example.s205343lykkehjulet.databinding.FragmentGuessWordBinding
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 

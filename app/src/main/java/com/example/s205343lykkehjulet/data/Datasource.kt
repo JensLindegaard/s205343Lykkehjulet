@@ -7,11 +7,12 @@ import com.example.s205343lykkehjulet.model.possibleWords
 class Datasource {
 
     val wordsPosible = listOf<possibleWords>(
-        possibleWords("Biler",
+        possibleWords("Cars",
             listOf(
                 "BMW",
                 "Mercedes",
                 "Toyota",
-                "Volvo"))
+                "Volvo",
+            "B M W "))
     )
 }
