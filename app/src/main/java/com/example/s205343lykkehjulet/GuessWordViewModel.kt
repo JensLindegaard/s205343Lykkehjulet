@@ -20,6 +20,7 @@ class GuessWordViewModel : ViewModel() {
     private lateinit var wordToGuess: String
     private var lifes = 5
     private var gameoverLifes = 0
+    private var letterInput = ""
 
 
     private val getPossibleWords = Datasource().wordsPosible
@@ -35,9 +36,13 @@ class GuessWordViewModel : ViewModel() {
             if (char == ' ') {
                 letters.append(' ')
             } else {
-                letters.append('_')
+                if (letterInput.contains(char,ignoreCase = true)){
+                    letters.append(char)
+                } else{
+                    letters.append('_')
+                }
             }
-            underscores = letters.toString()
+//            underscores = letters.toString()
         }
         return letters.toString()
     }
@@ -46,6 +51,7 @@ class GuessWordViewModel : ViewModel() {
         var inputOfLetters = letter
         var underscoredWord = words.value
         var checkifLetterinWord = underscoredWord?.contains(inputOfLetters.toCharArray().first(), ignoreCase = true)
+        letterInput += inputOfLetters
 
         val timesLetterinWord = underscoredWord?.count{letter.contains(it)}
         if (checkifLetterinWord!!){

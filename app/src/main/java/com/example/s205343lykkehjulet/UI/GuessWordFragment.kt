@@ -5,17 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.children
 import androidx.fragment.app.viewModels
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.example.s205343lykkehjulet.GuessWordViewModel
-import com.example.s205343lykkehjulet.R
 import com.example.s205343lykkehjulet.databinding.FragmentGuessWordBinding
 
 //import com.example.s205343lykkehjulet.UI.GuessWordViewModel
@@ -41,6 +32,13 @@ class GuessWordFragment : Fragment() {
         binding.apply {
             wordwhatneedstobeguessed.text = guesswordviewmodel.underScores()
         }
+
+        binding.Guessword.setOnClickListener {
+            guesswordviewmodel.isLetterInWord(letter = binding.tvlettersGuessed.text)
+
+            binding.wordwhatneedstobeguessed.text = guesswordviewmodel.underScores()
+        }
+
     }
 
 
