@@ -42,7 +42,7 @@ class GuessWordViewModel : ViewModel() {
                     letters.append('_')
                 }
             }
-//            underscores = letters.toString()
+            underscores = letters.toString()
         }
         return letters.toString()
     }
@@ -53,7 +53,9 @@ class GuessWordViewModel : ViewModel() {
         var checkifLetterinWord = underscoredWord?.contains(inputOfLetters.toCharArray().first(), ignoreCase = true)
         letterInput += inputOfLetters
 
-        val timesLetterinWord = underscoredWord?.count{letter.contains(it)}
+        val timesLetterinWord = underscoredWord?.count{
+            letter.contains(it)
+        }
         if (checkifLetterinWord!!){
             var currentPoints = timesLetterinWord!! * 10
         }

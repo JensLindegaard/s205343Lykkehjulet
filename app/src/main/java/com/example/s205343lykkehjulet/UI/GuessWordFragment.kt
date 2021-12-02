@@ -34,8 +34,7 @@ class GuessWordFragment : Fragment() {
         }
 
         binding.Guessword.setOnClickListener {
-            guesswordviewmodel.isLetterInWord(letter = binding.tvlettersGuessed.text)
-
+            guesswordviewmodel.isLetterInWord(letter = binding.Guessword.text.toString())
             binding.wordwhatneedstobeguessed.text = guesswordviewmodel.underScores()
         }
 
