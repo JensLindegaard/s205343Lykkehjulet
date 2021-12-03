@@ -13,7 +13,7 @@ import com.example.s205343lykkehjulet.adapter.WordAdapter
 import com.example.s205343lykkehjulet.viewmodel.GuessWordViewModel
 import com.example.s205343lykkehjulet.databinding.FragmentGuessWordBinding
 
-//import com.example.s205343lykkehjulet.UI.GuessWordViewModel
+// Brugt Codelab til hjælp med denne del koden
 
 class GuessWordFragment : Fragment() {
 
@@ -33,8 +33,10 @@ class GuessWordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tvlettersGuessed.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        binding.tvlettersGuessed.adapter = WordAdapter(requireContext(),guesswordviewmodel.listOfGueesedLetters)
+        binding.rvlettersGuessed.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvlettersGuessed.adapter =
+            WordAdapter(requireContext(), guesswordviewmodel.listOfGueesedLetters)
 
 
         guesswordviewmodel.makeWords()
@@ -57,20 +59,22 @@ class GuessWordFragment : Fragment() {
         binding.currentLifes
     }
 
-    fun updateView(){
+    fun updateView() {
         binding.apply {
             currentLifes.text = guesswordviewmodel.currentlifes.toString()
             currentPoints.text = guesswordviewmodel.currentPoints.toString()
             wordwhatneedstobeguessed
-            PointsofSpinWhell.text = guesswordviewmodel.updatePoints.toString()
-            binding.tvlettersGuessed.adapter = WordAdapter(requireContext(),guesswordviewmodel.listOfGueesedLetters)
+            PointsofSpinWhell.text = guesswordviewmodel.updatedPoints.toString()
+            binding.rvlettersGuessed.adapter =
+                WordAdapter(requireContext(), guesswordviewmodel.listOfGueesedLetters)
+
         }
 
-        if (guesswordviewmodel.checkifGameWon()){
+        if (guesswordviewmodel.checkifGameWon()) {
             findNavController().navigate(R.id.action_guessWordFragment_to_gameWon)
         }
 
-        if (guesswordviewmodel.checkifGameLost()){
+        if (guesswordviewmodel.checkifGameLost()) {
             findNavController().navigate(R.id.action_guessWordFragment_to_gameLost)
         }
     }

@@ -9,6 +9,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.s205343lykkehjulet.R
 import com.example.s205343lykkehjulet.databinding.FragmentGameLostBinding
 
+// Brugt Codelab til hjælp med denne del koden
+
 class GameLostFragment : Fragment() {
     private var _binding: FragmentGameLostBinding? = null
     private val binding get() = _binding!!
@@ -25,13 +27,8 @@ class GameLostFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-         binding.TabtTilHjem.setOnClickListener{
-             findNavController().navigate(R.id.action_gameLost_to_startGameFragment)
-         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        binding.TabtTilHjem.setOnClickListener {
+            findNavController().navigate(R.id.action_gameLost_to_startGameFragment)
+        }
     }
 }

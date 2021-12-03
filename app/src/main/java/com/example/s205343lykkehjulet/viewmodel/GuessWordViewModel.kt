@@ -1,26 +1,22 @@
 package com.example.s205343lykkehjulet.viewmodel
 
-import android.util.Log
-import android.widget.Button
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.s205343lykkehjulet.data.Datasource
-import com.example.s205343lykkehjulet.databinding.FragmentGameWonBinding
 import java.lang.StringBuilder
+import kotlin.math.absoluteValue
 
+// Brugt Codelabs Units til opbygning og inspiration til funktioner
 
 class GuessWordViewModel : ViewModel() {
 
-    private val _category = MutableLiveData<String>()
-    val category: LiveData<String> = _category
     private val _words = MutableLiveData<String>()
     val words: LiveData<String> = _words
     var currentlifes = 5
-    private var lettersGuessed: String = ""
-    private lateinit var underscores: String
     private var letterInput = ""
     var currentPoints = 0
+    var updatedPoints = 0
 
     private val getPossibleWords = Datasource().wordsPosible
 
@@ -28,6 +24,9 @@ class GuessWordViewModel : ViewModel() {
         val wordsMake = getPossibleWords.random()
         _words.value = wordsMake.words.random()
     }
+
+// Taget inspiration fra, https://github.com/usmaanz/Hangman/blob/master/app/src/main/java/com/usmaan/hangman/GameManager.kt,
+// til at lave underScores.
 
     fun underScores(): String {
         val letters = StringBuilder()
@@ -41,12 +40,9 @@ class GuessWordViewModel : ViewModel() {
                     letters.append('_')
                 }
             }
-            underscores = letters.toString()
         }
         return letters.toString()
     }
-
-    var updatePoints = 0
 
     fun isLetterInWord(letter: String) {
         var inputOfLetters = letter
@@ -60,21 +56,21 @@ class GuessWordViewModel : ViewModel() {
         }
         if (checkifLetterinWord!!) {
 
-            currentPoints += timesLetterinWord!! * updatePoints
+            currentPoints += timesLetterinWord!! * updatedPoints
         } else{
             currentlifes -= 1
         }
     }
 
     fun spinWheel(){
-        updatePoints = listOf<Int>(0, 100, 200, 300, 400).random()
+        updatedPoints = listOf<Int>(0, 100, 200, 300, 400).random()
     }
 
     var listOfGueesedLetters = mutableListOf<Char>()
 
     fun guessSameLetter(letter: String): Boolean{
         var same = false
-        if (listOfGueesedLetters.contains(letter.lowercase().single())){
+        if (listOfGueesedLetters.contains(letter.lowercase().single())) {
             same = true
         }
         listOfGueesedLetters.add(letter.lowercase().single())
@@ -82,22 +78,20 @@ class GuessWordViewModel : ViewModel() {
     }
 
 
-    fun checkifGameWon(): Boolean{
+    fun checkifGameWon(): Boolean {
         var lettersinword = words.value?.lowercase()?.toList()
-        if (listOfGueesedLetters.containsAll(lettersinword!!)){
+        if (listOfGueesedLetters.containsAll(lettersinword!!)) {
             return true
         } else {
             return false
         }
     }
 
-    fun checkifGameLost(): Boolean{
-        if (currentlifes <= 0){
+    fun checkifGameLost(): Boolean {
+        if (currentlifes <= 0) {
             return true
         } else {
             return false
         }
     }
-
-
 }

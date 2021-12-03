@@ -1,18 +1,19 @@
 package com.example.s205343lykkehjulet.data
-
-import android.provider.UserDictionary
-import com.example.s205343lykkehjulet.R
 import com.example.s205343lykkehjulet.model.possibleWords
+
+// Brugt Codelab til hjælp med denne del koden
 
 class Datasource {
 
     val wordsPosible = listOf<possibleWords>(
-        possibleWords("Cars",
+        possibleWords(
             listOf(
                 "BMW",
                 "Mercedes",
                 "Toyota",
                 "Volvo",
-            "B M W "))
+                "BMW"
+            )
+        )
     )
 }

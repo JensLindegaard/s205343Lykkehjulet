@@ -22,7 +22,7 @@
     <string name="spin_wheel">Spin Wheel!!</string>
     <string name="lifes">Lifes:</string>
     <string name="points">Points:</string>
-    <string name="points_of_spin_wheel">Points Of Spin Wheel</string>
+    <string name="points_of_spun_wheel">Points Of Spun Wheel</string>
     <string name="Start_lifes">5</string>
 
 </resources>

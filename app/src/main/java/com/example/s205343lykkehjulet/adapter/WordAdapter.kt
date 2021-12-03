@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.s205343lykkehjulet.R
-import com.example.s205343lykkehjulet.model.possibleWords
+
+// Brugt Codelab til hjælp med denne del koden
 
 class WordAdapter(
     private val context: Context,
-    private val dataset: List<Char>) : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
+    private val dataset: List<Char>
+) : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and

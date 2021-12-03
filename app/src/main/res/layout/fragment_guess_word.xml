@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
     tools:context=".UI.GuessWordFragment">
 
 
@@ -39,16 +38,20 @@
         android:inputType="text" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tvlettersGuessed"
+        android:id="@+id/rvlettersGuessed"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Guessword"
         android:orientation="horizontal"
-        />
+        android:textAlignment="gravity"
+        android:textDirection="firstStrongLtr"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Guessword">
+    </androidx.recyclerview.widget.RecyclerView>
 
     <Button
         android:id="@+id/btGuessWord"
@@ -73,6 +76,16 @@
         app:layout_constraintTop_toBottomOf="@+id/wordwhatneedstobeguessed" />
 
     <TextView
+        android:id="@+id/PointsofSpinWhell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/points_of_spun_wheel"
+        app:layout_constraintBottom_toTopOf="@+id/Spin_Wheel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wordwhatneedstobeguessed" />
+
+    <TextView
         android:id="@+id/lifesback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,6 +96,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.112" />
+
+    <TextView
+        android:id="@+id/currentLifes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/Start_lifes"
+        app:layout_constraintStart_toEndOf="@+id/lifesback"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPoints"
@@ -97,30 +120,11 @@
         app:layout_constraintVertical_bias="0.233" />
 
     <TextView
-        android:id="@+id/PointsofSpinWhell"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/points_of_spin_wheel"
-        app:layout_constraintBottom_toTopOf="@+id/Spin_Wheel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wordwhatneedstobeguessed" />
-
-    <TextView
-        android:id="@+id/currentLifes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/Start_lifes"
-        app:layout_constraintStart_toEndOf="@+id/lifesback"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/currentPoints"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintStart_toEndOf="@+id/tvPoints"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Current Points" />

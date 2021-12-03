@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import com.example.s205343lykkehjulet.data.Datasource
 import com.example.s205343lykkehjulet.databinding.FragmentListwordBinding
+
+// Brugt Codelab til hjælp med denne del koden
 
 class listwordFragment : Fragment() {
     private var _binding: FragmentListwordBinding? = null
@@ -19,16 +19,5 @@ class listwordFragment : Fragment() {
     ): View? {
         _binding = FragmentListwordBinding.inflate(inflater, container, false)
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        val myDataset = Datasource().loadAffirmations()
-//
-//        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-//        recyclerView.adapter = ItemAdapter(this, myDataset)
-//
-//        recyclerView.setHasFixedSize(true)
     }
 }

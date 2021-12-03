@@ -1,6 +1,3 @@
 package com.example.s205343lykkehjulet.model
 
-data class possibleWords(
-    val category : String,
-    val words : List<String>
-)
+data class possibleWords(val words: List<String>)
