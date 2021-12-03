@@ -6,7 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.s205343lykkehjulet.GuessWordViewModel
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.s205343lykkehjulet.R
+import com.example.s205343lykkehjulet.adapter.WordAdapter
+import com.example.s205343lykkehjulet.viewmodel.GuessWordViewModel
 import com.example.s205343lykkehjulet.databinding.FragmentGuessWordBinding
 
 //import com.example.s205343lykkehjulet.UI.GuessWordViewModel
@@ -28,18 +32,47 @@ class GuessWordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.tvlettersGuessed.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.tvlettersGuessed.adapter = WordAdapter(requireContext(),guesswordviewmodel.listOfGueesedLetters)
+
+
         guesswordviewmodel.makeWords()
         binding.apply {
             wordwhatneedstobeguessed.text = guesswordviewmodel.underScores()
         }
 
-        binding.Guessword.setOnClickListener {
-            guesswordviewmodel.isLetterInWord(letter = binding.Guessword.text.toString())
-            binding.wordwhatneedstobeguessed.text = guesswordviewmodel.underScores()
+        binding.btGuessWord.setOnClickListener {
+            if (!guesswordviewmodel.guessSameLetter(letter = binding.Guessword.text.toString())) {
+                guesswordviewmodel.isLetterInWord(letter = binding.Guessword.text.toString())
+                binding.wordwhatneedstobeguessed.text = guesswordviewmodel.underScores()
+                updateView()
+            }
         }
 
+        binding.SpinWheel.setOnClickListener {
+            guesswordviewmodel.spinWheel()
+            updateView()
+        }
+        binding.currentLifes
     }
 
+    fun updateView(){
+        binding.apply {
+            currentLifes.text = guesswordviewmodel.currentlifes.toString()
+            currentPoints.text = guesswordviewmodel.currentPoints.toString()
+            wordwhatneedstobeguessed
+            PointsofSpinWhell.text = guesswordviewmodel.updatePoints.toString()
+            binding.tvlettersGuessed.adapter = WordAdapter(requireContext(),guesswordviewmodel.listOfGueesedLetters)
+        }
 
+        if (guesswordviewmodel.checkifGameWon()){
+            findNavController().navigate(R.id.action_guessWordFragment_to_gameWon)
+        }
+
+        if (guesswordviewmodel.checkifGameLost()){
+            findNavController().navigate(R.id.action_guessWordFragment_to_gameLost)
+        }
+    }
 }
 

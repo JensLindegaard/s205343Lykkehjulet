@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
     tools:context=".UI.GuessWordFragment">
 
 
@@ -33,7 +34,9 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no"
+        android:inputType="text" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tvlettersGuessed"
@@ -44,7 +47,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Guessword"
-        tools:text="Used Letters: A B C D E F" />
+        android:orientation="horizontal"
+        />
 
     <Button
         android:id="@+id/btGuessWord"
@@ -67,5 +71,59 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wordwhatneedstobeguessed" />
+
+    <TextView
+        android:id="@+id/lifesback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lifes"
+        app:layout_constraintBottom_toTopOf="@+id/wordwhatneedstobeguessed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.112" />
+
+    <TextView
+        android:id="@+id/tvPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/points"
+        app:layout_constraintBottom_toTopOf="@+id/wordwhatneedstobeguessed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lifesback"
+        app:layout_constraintVertical_bias="0.233" />
+
+    <TextView
+        android:id="@+id/PointsofSpinWhell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/points_of_spin_wheel"
+        app:layout_constraintBottom_toTopOf="@+id/Spin_Wheel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wordwhatneedstobeguessed" />
+
+    <TextView
+        android:id="@+id/currentLifes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/Start_lifes"
+        app:layout_constraintStart_toEndOf="@+id/lifesback"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/currentPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintStart_toEndOf="@+id/tvPoints"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Current Points" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

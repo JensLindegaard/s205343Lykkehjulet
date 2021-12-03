@@ -11,7 +11,7 @@ import com.example.s205343lykkehjulet.model.possibleWords
 
 class WordAdapter(
     private val context: Context,
-    private val dataset: List<possibleWords>) : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
+    private val dataset: List<Char>) : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -37,7 +37,7 @@ class WordAdapter(
      */
     override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
         val item = dataset[position]
-        //holder.textView.text = context.resources.getString(item.stringResourceId)
+        holder.textView.text = item.toString()
     }
 
     /**

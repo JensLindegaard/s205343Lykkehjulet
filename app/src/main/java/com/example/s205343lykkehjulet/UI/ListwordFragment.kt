@@ -1,10 +1,12 @@
-package com.example.s205343lykkehjulet
+package com.example.s205343lykkehjulet.UI
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.example.s205343lykkehjulet.data.Datasource
 import com.example.s205343lykkehjulet.databinding.FragmentListwordBinding
 
 class listwordFragment : Fragment() {
